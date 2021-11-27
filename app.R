@@ -7,10 +7,10 @@ ui<-dashboardPage(title= "Dashboard", skin= "red",
                   dashboardHeader(title="OBSERVATORIO",
                                   dropdownMenu(type="messages",
                                                messageItem(from="Andy",
-                                                           ".")
+                                                           "Esta página se está desarrollando...")
                                   ),
                                   dropdownMenu(type="notifications",
-                                               notificationItem(text="https://github.com/Evidencia-pe/Shiny-dashboard")
+                                               notificationItem(text = "Aportes y Sugerencias en GitHub",href="https://github.com/Evidencia-pe/Shiny-dashboard")
                                                
                                   ),
                                   dropdownMenu(type="tasks",
@@ -35,7 +35,11 @@ ui<-dashboardPage(title= "Dashboard", skin= "red",
                         menuItem(
                           tabName = "tab_pp",
                           text = "Políticas Públicas",
-                          icon = icon("eye")
+                          icon = icon("eye"),
+                          menuSubItem('Economía', tabName = 'pp_economia', icon = icon("piggy-bank")),
+                          menuSubItem('Comercio Internacional', tabName = 'pp_comint', icon = icon("truck-moving")),
+                          menuSubItem('Salud', tabName = 'pp_salud', , icon = icon("heart")),
+                          menuSubItem('Educación', tabName = 'pp_educacion', icon = icon("graduation-cap"))
                         ),
                         menuItem(
                           tabName = "tab_ddhh",
@@ -45,16 +49,20 @@ ui<-dashboardPage(title= "Dashboard", skin= "red",
                         menuItem(
                           tabName = "tab_eg",
                           text = "Enfoque de Género",
-                          icon = icon("users")
+                          icon = icon("users"),
+                          collapsible = 
+                          menuSubItem('Sub-Item One', tabName = 'subItemOne'),
+                          menuSubItem('Violencia de Género', tabName = 'subItemTwo')
                         )
                       )
-               
+
                   ),
                   dashboardBody()
+
 )
-
-
 server <- function(input, output) { 
 }
 
 shinyApp(ui, server)
+
+
