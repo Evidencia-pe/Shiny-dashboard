@@ -33,9 +33,19 @@ ui<-dashboardPage(title= "Dashboard", skin= "red",
                               '))),
                       sidebarMenu(
                         menuItem(
-                          tabName = "economia",
-                          text = "Economía",
-                          icon = icon("chart-bar")
+                          tabName = "tab_pp",
+                          text = "Políticas Públicas",
+                          icon = icon("eye")
+                        ),
+                        menuItem(
+                          tabName = "tab_ddhh",
+                          text = "Derechos Humanos",
+                          icon = icon("search")
+                        ),
+                        menuItem(
+                          tabName = "tab_eg",
+                          text = "Enfoque de Género",
+                          icon = icon("users")
                         )
                       )
                
