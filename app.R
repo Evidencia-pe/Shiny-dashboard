@@ -30,11 +30,19 @@ ui<-dashboardPage(title= "Dashboard", skin= "red",
                                                 .skin-red .left-side, .skin-red .main-sidebar, .skin-red .wrapper {
     background-color: #0c0f16;
 }
-                              ')))
+                              '))),
+                      sidebarMenu(
+                        menuItem(
+                          tabName = "economia",
+                          text = "Economía",
+                          icon = icon("chart-bar")
+                        )
+                      )
                
                   ),
                   dashboardBody()
 )
+
 
 server <- function(input, output) { 
 }
